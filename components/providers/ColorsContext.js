@@ -13,10 +13,10 @@ const ColorsContext = createContext();
 export function ColorsProvider({ children }) {
   const [format, setFormat] = useState("className");
   const formatList = [
-    { name: "className", shortcut: "c" },
-    { name: "hex", shortcut: "h" },
-    { name: "rgb", shortcut: "r" },
-    { name: "hsl", shortcut: "l" },
+    { name: "className", shortcut: "c", example: "slate-100" },
+    { name: "hex", shortcut: "h", example: "#f1f5f9" },
+    { name: "rgb", shortcut: "r", example: "rgb(241,245,249)" },
+    { name: "hsl", shortcut: "l", example: "hsl(210,40%,96.1%)" },
   ];
 
   useEffect(() => {
