@@ -45,10 +45,6 @@ Users can view colors in various formats (HSL, RGB, and HEX) and create custom p
    ```
    npm install
    ```
-   or
-   ```
-   yarn install
-   ```
 
 4. Set up environment variables:
    Create a `.env.local` file in the root directory and add:
@@ -61,10 +57,6 @@ Users can view colors in various formats (HSL, RGB, and HEX) and create custom p
 
 ```
 npm run dev
-```
-or
-```
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
