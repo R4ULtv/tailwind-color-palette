@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import { PaintBrushIcon, SwatchIcon } from "@heroicons/react/16/solid";
 
@@ -10,26 +11,26 @@ import SelectFormatMenu from "@/components/ui/SelectFormatMenu";
 export default function Home() {
   return (
     <ColorsProvider>
-      <main className="max-w-screen-2xl py-16 md:px-4 mx-auto">
+      <main className="max-w-screen-2xl py-8 sm:py-16 px-4 mx-auto">
         <div className="relative">
-          <h1 className="text-3xl text-zinc-100 font-bold z-10 relative">
+          <h1 className="text-2xl sm:text-3xl text-zinc-100 font-bold z-10 relative">
             Tailwind Color Palette
           </h1>
-          <p className="text-zinc-300 font-medium mt-1.5 z-10 relative">
+          <p className="text-sm sm:text-base text-zinc-300 font-medium mt-1.5 z-10 relative">
             Tailwind CSS colors in HSL, RGB, and HEX formats.
           </p>
 
-          <div className="flex items-center gap-2 mt-4 z-10 relative">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mt-4 z-10 relative">
             <a
               href="#colors"
-              className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1"
+              className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start"
             >
               <SwatchIcon className="size-4" />
               Browse Colors
             </a>
             <Link
               href="/create-palette"
-              className="text-zinc-200 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1"
+              className="text-zinc-200 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start"
             >
               <PaintBrushIcon className="size-4" />
               Create Palette
@@ -43,14 +44,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-4 pt-4 space-y-3" id="colors">
+        <div className="mt-8 sm:mt-4 pt-4 space-y-3" id="colors">
           <div className="flex items-center justify-end">
             <SelectFormatMenu />
           </div>
-          <div className="grid gap-6 w-full">
+          <div className="grid gap-4 sm:gap-6 w-full">
             {Object.keys(colors).map((color) => (
               <div
-                className="flex flex-row gap-2 overflow-x-auto border border-zinc-800 hover:border-zinc-700 rounded-2xl p-2"
+                className="flex flex-col sm:flex-row gap-2 overflow-x-auto border border-zinc-800 hover:border-zinc-700 rounded-xl sm:rounded-2xl p-2"
                 key={color}
               >
                 {colors[color].map((item) => (
