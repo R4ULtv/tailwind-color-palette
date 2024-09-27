@@ -29,7 +29,7 @@ export default function ColorButton({ item, color }) {
       className="h-full flex-1 transition duration-75 data-[hover]:border-zinc-600 data-[focus]:border-zinc-500 outline-none group"
     >
       <div
-        className="rounded-xl aspect-[2/3] md:aspect-[3/2] w-auto h-auto relative"
+        className="rounded-xl aspect-[5/1] sm:aspect-[2/1] w-auto h-auto relative"
         style={{ backgroundColor: item.hex }}
       >
         <Transition show={!!copiedText}>
