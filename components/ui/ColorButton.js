@@ -26,10 +26,10 @@ export function ColorButtonTailwind({ item, color }) {
   return (
     <Button
       onClick={copyToClipboard}
-      className="h-full flex-1 transition duration-75 data-[hover]:border-zinc-600 data-[focus]:border-zinc-500 outline-none group"
+      className="w-auto h-auto flex-1 flex flex-col gap-1.5 transition duration-75 data-[hover]:border-zinc-600 data-[focus]:border-zinc-500 outline-none group"
     >
       <div
-        className="rounded-xl aspect-[5/1] sm:aspect-[2/1] w-auto h-auto relative"
+        className="rounded-xl flex-1 aspect-[5/1] sm:aspect-[2/1] w-full h-auto relative"
         style={{ backgroundColor: item.hex }}
       >
         <Transition show={!!copiedText}>
@@ -40,7 +40,7 @@ export function ColorButtonTailwind({ item, color }) {
           </div>
         </Transition>
       </div>
-      <div className="text-sm font-medium text-zinc-400 mt-1.5 group-hover:text-zinc-200 truncate max-w-28 mx-auto">
+      <div className="text-sm font-medium text-zinc-400 group-hover:text-zinc-200 truncate w-full px-2">
         {copyValue}
       </div>
     </Button>
@@ -51,10 +51,7 @@ export function ColorButtonPalette({ color }) {
   const { format } = useColors();
   const [copiedText, setCopiedText] = useState("");
 
-  const copyValue = useMemo(
-    () => (color[format]),
-    [format, color]
-  );
+  const copyValue = useMemo(() => color[format], [format, color]);
 
   const copyToClipboard = useCallback(() => {
     navigator.clipboard.writeText(copyValue).then(() => {
@@ -66,10 +63,10 @@ export function ColorButtonPalette({ color }) {
   return (
     <Button
       onClick={copyToClipboard}
-      className="h-full flex-1 transition duration-75 data-[hover]:border-zinc-600 data-[focus]:border-zinc-500 outline-none group"
+      className="w-auto h-auto flex-1 flex flex-col gap-1.5 transition duration-75 data-[hover]:border-zinc-600 data-[focus]:border-zinc-500 outline-none group"
     >
       <div
-        className="rounded-xl aspect-[5/1] sm:aspect-[2/1] w-auto h-auto relative"
+        className="rounded-xl flex-1 aspect-[5/1] sm:aspect-[2/1] w-full h-auto relative"
         style={{ backgroundColor: color.hex }}
       >
         <Transition show={!!copiedText}>
@@ -78,7 +75,7 @@ export function ColorButtonPalette({ color }) {
           </div>
         </Transition>
       </div>
-      <div className="text-sm font-medium text-zinc-400 mt-1.5 group-hover:text-zinc-200 truncate max-w-28 mx-auto">
+      <div className="text-sm font-medium text-zinc-400 group-hover:text-zinc-200 truncate w-full px-2">
         {copyValue}
       </div>
     </Button>
