@@ -31,7 +31,7 @@ export default function ShortCutMenu() {
           </Button>
         </MenuItem>
         {formatList.map((item) => (
-          <MenuItem>
+          <MenuItem key={item.name}>
             <Button className="group flex w-full items-center gap-4 rounded-md py-1.5 px-3 data-[focus]:bg-zinc-800/5 dark:data-[focus]:bg-zinc-200/5">
               Set to `{item.name}`
               <kbd className="ml-auto font-sans text-xs">{item.shortcut}</kbd>
