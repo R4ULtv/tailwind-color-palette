@@ -9,7 +9,7 @@ export default function Home() {
       <div className="flex items-center justify-end">
         <SelectFormatMenu />
       </div>
-      <div className="grid gap-4 sm:gap-6 w-full">
+      <div className="grid gap-4 sm:gap-6">
         {Object.keys(colors).map((color) => (
           <div
             className="flex flex-col sm:flex-row gap-2 overflow-x-auto border border-zinc-800 hover:border-zinc-700 rounded-xl sm:rounded-2xl p-2"
