@@ -3,8 +3,8 @@
 import { useState, useCallback, useMemo } from "react";
 import { Button } from "@headlessui/react";
 import {
-  ClipboardDocumentCheckIcon,
-  ClipboardDocumentIcon,
+  CheckIcon,
+  ClipboardIcon,
 } from "@heroicons/react/16/solid";
 
 export default function TailwindExport({ className, colors }) {
@@ -35,9 +35,9 @@ export default function TailwindExport({ className, colors }) {
       className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group"
     >
       {isCopied ? (
-        <ClipboardDocumentCheckIcon className="size-3.5 group-hover:scale-110 duration-75 ease-in-out transition" />
+        <CheckIcon className="size-3.5 group-hover:scale-110 duration-75 ease-in-out transition" />
       ) : (
-        <ClipboardDocumentIcon className="size-3.5 group-hover:scale-110 duration-75 ease-in-out transition" />
+        <ClipboardIcon className="size-3.5 group-hover:scale-110 duration-75 ease-in-out transition" />
       )}
     </Button>
   );
