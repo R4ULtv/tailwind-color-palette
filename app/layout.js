@@ -73,7 +73,7 @@ export default function RootLayout({ children }) {
               {children}
             </main>
             <footer className="max-w-screen-2xl px-4 mx-auto py-3">
-              <div className="px-6 mx-auto flex items-center justify-between text-sm text-zinc-400">
+              <div className="flex items-center justify-between text-sm text-zinc-400">
                 <p>
                   Built by{" "}
                   <a
