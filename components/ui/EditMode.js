@@ -247,7 +247,7 @@ export const PaletteItem = memo(({ item }) => {
         <div className="flex items-center gap-1">
           <Button
             onClick={handleSave}
-            className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out"
+            className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out select-none"
           >
             {isEditing ? (
               <>
@@ -269,7 +269,7 @@ export const PaletteItem = memo(({ item }) => {
             <>
               <Button
                 onClick={handleAddColor}
-                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out"
+                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out select-none"
               >
                 <PlusCircleIcon className="size-3.5" />
                 <span className="text-xs font-medium hidden sm:block">
@@ -278,7 +278,7 @@ export const PaletteItem = memo(({ item }) => {
               </Button>
               <Button
                 onClick={handleRemoveColor}
-                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out"
+                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out select-none"
               >
                 <BackspaceIcon className="size-3.5" />
                 <span className="text-xs font-medium hidden sm:block">
@@ -287,7 +287,7 @@ export const PaletteItem = memo(({ item }) => {
               </Button>
               <Button
                 onClick={handleDelete}
-                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out"
+                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out select-none"
               >
                 <TrashIcon className="size-3.5" />
                 <span className="text-xs font-medium hidden sm:block">
