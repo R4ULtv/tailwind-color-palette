@@ -25,7 +25,7 @@ export default function SelectFormatMenu() {
       <ListboxOptions
         anchor="bottom end"
         transition
-        className="min-w-40 rounded-lg bg-zinc-900 border border-zinc-700 p-1 mt-1 outline-none z-20"
+        className="min-w-40 rounded-lg bg-zinc-900 border border-zinc-700 p-1 outline-none z-20 transition transform duration-75 ease-in-out [--anchor-gap:4px] data-[closed]:-translate-y-1/3 data-[closed]:scale-50 data-[closed]:opacity-0"
       >
         {formatList.map((item) => (
           <ListboxOption

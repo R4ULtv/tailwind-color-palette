@@ -22,7 +22,7 @@ export default function ShortCutMenu() {
       <MenuItems
         transition
         anchor="top end"
-        className="min-w-32 origin-top-right outline-none p-1 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 text-sm transition duration-75 ease-in-out [--anchor-gap:4px] data-[closed]:scale-90 data-[closed]:opacity-0"
+        className="min-w-32 origin-top-right outline-none p-1 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 text-sm transition transform duration-75 ease-in-out [--anchor-gap:4px] data-[closed]:translate-y-1/2 data-[closed]:scale-50 data-[closed]:opacity-0"
       >
         <MenuItem>
           <Button className="group flex w-full items-center gap-4 rounded-md py-1.5 px-3 data-[focus]:bg-zinc-800/5 dark:data-[focus]:bg-zinc-200/5">
