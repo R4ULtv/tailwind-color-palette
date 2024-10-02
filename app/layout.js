@@ -50,16 +50,16 @@ export default function RootLayout({ children }) {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mt-4 z-10 relative">
                   <Link
                     href="/"
-                    className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start select-none"
+                    className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-semibold flex items-center gap-1.5 w-full sm:w-auto justify-center sm:justify-start group select-none"
                   >
-                    <SwatchIcon className="size-4" />
+                    <SwatchIcon className="size-4 transform group-hover:scale-110 group-hover:rotate-12 transition duration-150" />
                     Browse Colors
                   </Link>
                   <Link
                     href="/palette"
-                    className="text-zinc-200 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start select-none"
+                    className="text-zinc-200 px-2 py-1.5 rounded-lg text-sm font-semibold flex items-center gap-1.5 w-full sm:w-auto justify-center sm:justify-start border border-transparent hover:border-zinc-600 transition duration-150 group select-none"
                   >
-                    <PaintBrushIcon className="size-4" />
+                    <PaintBrushIcon className="size-4 transform group-hover:scale-110 group-hover:rotate-12 transition duration-150" />
                     Browse Palette
                   </Link>
                 </div>

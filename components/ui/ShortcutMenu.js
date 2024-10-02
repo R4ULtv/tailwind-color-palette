@@ -15,8 +15,8 @@ export default function ShortCutMenu() {
 
   return (
     <Menu>
-      <MenuButton className="flex items-center gap-0.5 outline-none select-none">
-        <BoltIcon className="size-3" />
+      <MenuButton className="flex items-center gap-0.5 outline-none select-none group border border-transparent px-2 py-1.5 rounded-lg data-[hover]:border-zinc-600 transition duration-150">
+        <BoltIcon className="size-3 group-data-[hover]:fill-amber-400 transform group-data-[hover]:scale-110 group-data-[hover]:rotate-180 transition duration-150" />
         <span className="text-xs font-bold">ShortCuts</span>
       </MenuButton>
       <MenuItems
