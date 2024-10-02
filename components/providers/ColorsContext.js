@@ -82,6 +82,10 @@ export function ColorsProvider({ children }) {
     }
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("colors-format", format);
+  }, [format]);
+
   return (
     <ColorsContext.Provider
       value={{
