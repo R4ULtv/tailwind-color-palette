@@ -15,7 +15,7 @@ export default function SelectFormatMenu() {
 
   return (
     <Listbox value={format} onChange={setFormat}>
-      <ListboxButton className="flex items-center justify-between gap-3 rounded-lg py-1.5 px-2 text-left text-sm text-zinc-300 border border-zinc-700 select-none">
+      <ListboxButton className="flex items-center justify-between gap-3 rounded-lg py-1.5 px-2 text-left text-sm text-zinc-300 border border-zinc-700 shrink-0 flex-1 sm:flex-none select-none">
         <div>
           <span className="font-medium text-zinc-200">Format:</span>{" "}
           <span>{format}</span>

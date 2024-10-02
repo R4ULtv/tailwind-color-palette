@@ -53,7 +53,7 @@ export default function PaletteList() {
       <div className="flex items-center sm:justify-end justify-center gap-2">
         <Link
           href="/palette/local"
-          className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center sm:justify-start"
+          className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center sm:justify-start flex-1 sm:flex-none shrink-0 "
         >
           <UserIcon className="size-4" />
           Local Palette
