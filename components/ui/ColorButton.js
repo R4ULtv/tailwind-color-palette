@@ -21,7 +21,7 @@ const CopyButton = ({ copyValue, backgroundColor, textColor }) => {
       className="w-auto h-auto flex-1 flex flex-col gap-1.5 transition duration-75 data-[hover]:border-zinc-600 data-[focus]:border-zinc-500 outline-none group"
     >
       <div
-        className="rounded-xl flex-1 aspect-[5/1] sm:aspect-[2/1] w-full h-auto relative"
+        className="rounded-xl flex-1 aspect-[5/1] sm:aspect-[2/1] w-full h-auto relative max-h-40"
         style={{ backgroundColor }}
       >
         <Transition show={!!copiedText}>
