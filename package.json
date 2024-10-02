@@ -15,6 +15,7 @@
     "next": "14.2.13",
     "next-view-transitions": "^0.3.2",
     "react": "^18",
+    "react-colorful": "^5.6.1",
     "react-dom": "^18"
   },
   "devDependencies": {
