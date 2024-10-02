@@ -5,7 +5,7 @@ import { UserIcon } from "@heroicons/react/16/solid";
 
 import SelectFormatMenu from "@/components/ui/SelectFormatMenu";
 import { ColorButtonPalette } from "@/components/ui/ColorButton";
-import { TailwindExport } from "@/components/ui/TailwindExport";
+import { TailwindExport } from "@/components/ui/ExportButtons";
 
 const PaletteItem = memo(({ item }) => (
   <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 rounded-xl sm:rounded-2xl p-2">

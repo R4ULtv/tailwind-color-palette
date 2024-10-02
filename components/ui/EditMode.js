@@ -20,7 +20,7 @@ import {
 import { HexColorPicker } from "react-colorful";
 
 import { ColorButtonPalette } from "@/components/ui/ColorButton";
-import { TailwindExport, GithubExport } from "@/components/ui/TailwindExport";
+import { TailwindExport, GithubExport } from "@/components/ui/ExportButtons";
 import { useColors } from "@/components/providers/ColorsContext";
 import {
   convertHexColor,
