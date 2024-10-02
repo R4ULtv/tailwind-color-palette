@@ -50,14 +50,14 @@ export default function RootLayout({ children }) {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mt-4 z-10 relative">
                   <Link
                     href="/"
-                    className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start"
+                    className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start select-none"
                   >
                     <SwatchIcon className="size-4" />
                     Browse Colors
                   </Link>
                   <Link
                     href="/palette"
-                    className="text-zinc-200 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start"
+                    className="text-zinc-200 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 w-full sm:w-auto justify-center sm:justify-start select-none"
                   >
                     <PaintBrushIcon className="size-4" />
                     Browse Palette
@@ -84,7 +84,7 @@ export default function RootLayout({ children }) {
                   </a>
                   . The source code is available on{" "}
                   <a
-                    href="https://github.com/r4ultv/tailwind-colors"
+                    href="https://github.com/r4ultv/tailwind-color-palette"
                     className="underline underline-offset-2 hover:text-zinc-300"
                     target="_blank"
                     rel="noopener noreferrer"
