@@ -19,7 +19,7 @@ ColorGroup.displayName = "ColorGroup";
 
 export default function Home() {
   return (
-    <div className="mt-8 sm:mt-4 pt-4 space-y-3" id="colors">
+    <div className="mt-8 sm:mt-4 pt-4 space-y-3">
       <div className="flex items-center justify-end">
         <SelectFormatMenu />
       </div>
