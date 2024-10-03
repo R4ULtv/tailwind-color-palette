@@ -39,14 +39,26 @@ export function ColorsProvider({ children }) {
       if (!format) return;
 
       formatList.forEach((item) => {
-        if (e.key === item.shortcut) {
+        if (
+          e.key === item.shortcut &&
+          !e.altKey &&
+          !e.ctrlKey &&
+          !e.metaKey &&
+          !e.shiftKey
+        ) {
           e.preventDefault();
           setFormat(item.name);
           localStorage.setItem("colors-format", item.name);
         }
       });
 
-      if (e.key === "e") {
+      if (
+        e.key === "e" &&
+        !e.altKey &&
+        !e.ctrlKey &&
+        !e.metaKey &&
+        !e.shiftKey
+      ) {
         // SET THE NEXT COLOR FORMAT
         e.preventDefault();
         const currentIndex = formatList.findIndex(
@@ -55,7 +67,13 @@ export function ColorsProvider({ children }) {
         const nextIndex = (currentIndex + 1) % formatList.length;
         setFormat(formatList[nextIndex].name);
         localStorage.setItem("colors-format", formatList[nextIndex].name);
-      } else if (e.key === "q") {
+      } else if (
+        e.key === "q" &&
+        !e.altKey &&
+        !e.ctrlKey &&
+        !e.metaKey &&
+        !e.shiftKey
+      ) {
         // SET THE PREVIOUS COLOR FORMAT
         e.preventDefault();
         const currentIndex = formatList.findIndex(
