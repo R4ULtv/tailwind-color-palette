@@ -16,7 +16,7 @@ export default function LocalPalette() {
         .map((item) => (
           <PaletteItem key={item.name} item={item} />
         ))}
-      {localPalette.length > 0 || isNewPalette && (
+      {(localPalette.length > 0 || isNewPalette) && (
         <div className="h-px w-full bg-zinc-800"></div>
       )}
     </>
