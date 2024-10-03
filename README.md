@@ -19,14 +19,14 @@ Users can view colors in various formats (HSL, RGB, and HEX) and create custom p
 - [Next.js 14](https://nextjs.org/)
 - [React](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Geist Sans](https://vercel.com/font) font
+- [Geist Sans](https://vercel.com/font)
 - [Heroicons](https://heroicons.com/)
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (version 14 or later)
+- Node.js (version 18x or later)
 - npm or yarn
 
 ### Installation
