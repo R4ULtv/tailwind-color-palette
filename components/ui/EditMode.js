@@ -115,6 +115,7 @@ export const PaletteItem = memo(({ item }) => {
   }, [setEditPalette]);
 
   const handleDelete = useCallback(() => {
+    setIsNewPalette(false);
     setEditPalette(null);
     setLocalPalette((prev) =>
       prev.filter((palette) => palette.uuid !== item.uuid)
