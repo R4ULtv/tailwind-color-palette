@@ -222,7 +222,7 @@ export const PaletteItem = memo(({ item }) => {
   );
 
   return (
-    <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 rounded-xl sm:rounded-2xl p-2">
+    <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 duration-75 transition rounded-xl sm:rounded-2xl p-2">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 my-1">
         <div className="text-sm text-zinc-200 font-medium ml-1.5">
           {isEditing ? (
