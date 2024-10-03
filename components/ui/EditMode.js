@@ -159,7 +159,7 @@ export const PaletteItem = memo(({ item }) => {
     <Popover key={index} className="relative w-auto h-auto flex-1">
       <div className="w-full h-full flex flex-col gap-1.5">
         <PopoverButton
-          className="rounded-xl flex-1 aspect-[5/1] sm:aspect-[2/1] w-full h-auto max-h-40"
+          className="rounded-xl flex-1 aspect-[5/1] md:aspect-[2/1] w-full h-auto max-h-40"
           style={{ backgroundColor: color.hex }}
         />
         <Input
@@ -222,8 +222,8 @@ export const PaletteItem = memo(({ item }) => {
   );
 
   return (
-    <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 duration-75 transition rounded-xl sm:rounded-2xl p-2">
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 my-1">
+    <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 duration-75 transition rounded-xl md:rounded-2xl p-2">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 my-1">
         <div className="text-sm text-zinc-200 font-medium ml-1.5">
           {isEditing ? (
             renderEditFields()
@@ -308,7 +308,7 @@ export const PaletteItem = memo(({ item }) => {
           )}
         </div>
       </div>
-      <div className="w-full flex flex-col sm:flex-row gap-2 relative last:mr-auto">
+      <div className="w-full flex flex-col md:flex-row gap-2 relative last:mr-auto">
         {isEditing
           ? editPalette.colors.map((color, index) =>
               renderColorPicker(color, index)

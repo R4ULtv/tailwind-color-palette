@@ -38,26 +38,26 @@ export default function RootLayout({ children }) {
           }
         >
           <ColorsProvider>
-            <main className="max-w-screen-2xl py-8 sm:py-16 px-4 mx-auto">
+            <main className="max-w-screen-2xl py-8 md:py-16 px-4 mx-auto">
               <div className="relative">
-                <h1 className="text-2xl sm:text-3xl text-zinc-100 font-bold z-10 relative">
+                <h1 className="text-2xl md:text-3xl text-zinc-100 font-bold z-10 relative">
                   Tailwind Color Palette
                 </h1>
-                <p className="text-sm sm:text-base text-zinc-300 font-medium mt-1.5 z-10 relative">
+                <p className="text-sm md:text-base text-zinc-300 font-medium mt-1.5 z-10 relative">
                   Tailwind CSS colors in HSL, RGB, and HEX formats.
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mt-4 z-10 relative">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-2 mt-4 z-10 relative">
                   <Link
                     href="/"
-                    className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-semibold flex items-center gap-1.5 w-full sm:w-auto justify-center sm:justify-start group select-none"
+                    className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-semibold flex items-center gap-1.5 w-full md:w-auto justify-center md:justify-start group select-none"
                   >
                     <PaintBrushIcon className="size-4 transform group-hover:scale-110 group-hover:rotate-12 transition duration-150" />
                     Browse Colors
                   </Link>
                   <Link
                     href="/palettes"
-                    className="text-zinc-200 px-2 py-1.5 rounded-lg text-sm font-semibold flex items-center gap-1.5 w-full sm:w-auto justify-center sm:justify-start border border-transparent hover:border-zinc-600 transition duration-150 group select-none"
+                    className="text-zinc-200 px-2 py-1.5 rounded-lg text-sm font-semibold flex items-center gap-1.5 w-full md:w-auto justify-center md:justify-start border border-transparent hover:border-zinc-600 transition duration-150 group select-none"
                   >
                     <SwatchIcon className="size-4 transform group-hover:scale-110 group-hover:rotate-12 transition duration-150" />
                     Browse Palettes

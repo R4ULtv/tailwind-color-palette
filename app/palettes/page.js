@@ -8,7 +8,7 @@ import LocalPalette from "@/components/ui/LocalPalette";
 import NewPaletteButton from "@/components/ui/NewPaletteButton";
 
 const PaletteItem = memo(({ item }) => (
-  <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 duration-75 transition rounded-xl sm:rounded-2xl p-2">
+  <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 duration-75 transition rounded-xl md:rounded-2xl p-2">
     <div className="flex items-center justify-between gap-8 my-1">
       <div className="text-sm text-zinc-200 font-medium ml-1.5">
         {item.name} -{" "}
@@ -33,7 +33,7 @@ const PaletteItem = memo(({ item }) => (
       </div>
     </div>
 
-    <div className="flex flex-col sm:flex-row gap-2 relative">
+    <div className="flex flex-col md:flex-row gap-2 relative">
       {item.colors.map((color, index) => (
         <ColorButtonPalette
           key={`${item.name}-${index}`}
@@ -49,12 +49,12 @@ PaletteItem.displayName = "PaletteItem";
 
 export default function PaletteList() {
   return (
-    <div className="mt-8 sm:mt-4 pt-4 space-y-3">
-      <div className="flex items-center sm:justify-end justify-center gap-2">
+    <div className="mt-8 md:mt-4 pt-4 space-y-3">
+      <div className="flex items-center justify-end gap-2">
         <NewPaletteButton />
         <SelectFormatMenu />
       </div>
-      <div className="grid gap-4 sm:gap-6">
+      <div className="grid gap-4 md:gap-6">
         <LocalPalette />
         {palette.map((item) => (
           <PaletteItem key={item.name} item={item} />
