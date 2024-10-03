@@ -6,7 +6,11 @@ import {
   ListboxOption,
   ListboxOptions,
 } from "@headlessui/react";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/16/solid";
+import {
+  CheckIcon,
+  ChevronUpDownIcon,
+  FunnelIcon,
+} from "@heroicons/react/16/solid";
 
 import { useColors } from "@/components/providers/ColorsContext";
 
@@ -15,9 +19,13 @@ export default function SelectFormatMenu() {
 
   return (
     <Listbox value={format} onChange={setFormat}>
-      <ListboxButton className="flex items-center justify-between gap-3 rounded-lg py-1.5 px-2 text-left text-sm text-zinc-300 border border-zinc-700 shrink-0 flex-1 sm:flex-none select-none">
-        <div>
-          <span className="font-medium text-zinc-200">Format:</span>{" "}
+      <ListboxButton className="flex items-center justify-between gap-3 rounded-lg py-1.5 px-2 text-left text-sm text-zinc-300 border border-zinc-700 shrink-0 flex-1 sm:flex-none group select-none">
+        <div className="flex items-center gap-1 justify-center">
+          <FunnelIcon
+            className="size-4 transform group-data-[hover]:scale-110 group-data-[hover]:rotate-12 transition duration-150"
+            aria-hidden="true"
+          />
+          <span className="font-medium text-zinc-200">Format:</span>
           <span>{format}</span>
         </div>
         <ChevronUpDownIcon className="size-4" aria-hidden="true" />
