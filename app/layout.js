@@ -52,15 +52,15 @@ export default function RootLayout({ children }) {
                     href="/"
                     className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-semibold flex items-center gap-1.5 w-full sm:w-auto justify-center sm:justify-start group select-none"
                   >
-                    <SwatchIcon className="size-4 transform group-hover:scale-110 group-hover:rotate-12 transition duration-150" />
+                    <PaintBrushIcon className="size-4 transform group-hover:scale-110 group-hover:rotate-12 transition duration-150" />
                     Browse Colors
                   </Link>
                   <Link
-                    href="/palette"
+                    href="/palettes"
                     className="text-zinc-200 px-2 py-1.5 rounded-lg text-sm font-semibold flex items-center gap-1.5 w-full sm:w-auto justify-center sm:justify-start border border-transparent hover:border-zinc-600 transition duration-150 group select-none"
                   >
-                    <PaintBrushIcon className="size-4 transform group-hover:scale-110 group-hover:rotate-12 transition duration-150" />
-                    Browse Palette
+                    <SwatchIcon className="size-4 transform group-hover:scale-110 group-hover:rotate-12 transition duration-150" />
+                    Browse Palettes
                   </Link>
                 </div>
 
