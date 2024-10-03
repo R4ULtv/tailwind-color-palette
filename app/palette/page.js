@@ -6,6 +6,8 @@ import { UserIcon } from "@heroicons/react/16/solid";
 import SelectFormatMenu from "@/components/ui/SelectFormatMenu";
 import { ColorButtonPalette } from "@/components/ui/ColorButton";
 import { TailwindExport } from "@/components/ui/ExportButtons";
+import LocalPalette from "@/components/ui/LocalPalette";
+import NewPaletteButton from "@/components/ui/NewPaletteButton";
 
 const PaletteItem = memo(({ item }) => (
   <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 rounded-xl sm:rounded-2xl p-2">
@@ -51,16 +53,11 @@ export default function PaletteList() {
   return (
     <div className="mt-8 sm:mt-4 pt-4 space-y-3">
       <div className="flex items-center sm:justify-end justify-center gap-2">
-        <Link
-          href="/palette/local"
-          className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center sm:justify-start flex-1 sm:flex-none shrink-0 "
-        >
-          <UserIcon className="size-4" />
-          Local Palette
-        </Link>
+        <NewPaletteButton />
         <SelectFormatMenu />
       </div>
       <div className="grid gap-4 sm:gap-6">
+        <LocalPalette />
         {palette.map((item) => (
           <PaletteItem key={item.name} item={item} />
         ))}
