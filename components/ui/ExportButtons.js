@@ -2,7 +2,8 @@
 
 import { useState, useCallback, useMemo } from "react";
 import { Button } from "@headlessui/react";
-import { CheckIcon, ClipboardIcon } from "@heroicons/react/16/solid";
+import { CheckIcon } from "@heroicons/react/16/solid";
+import { GithubIcon, TailwindIcon } from "@/utils/icons";
 
 export function TailwindExport({ className, colors }) {
   const [isCopied, setIsCopied] = useState(false);
@@ -38,14 +39,14 @@ export function TailwindExport({ className, colors }) {
         <>
           <CheckIcon className="size-3.5" />
           <span className="text-xs font-medium hidden sm:block">
-            Copy Tailwind Config
+            Copy Tailwind
           </span>
         </>
       ) : (
         <>
-          <ClipboardIcon className="size-3.5" />
+          <TailwindIcon className="size-3.5" />
           <span className="text-xs font-medium hidden sm:block">
-            Copy Tailwind Config
+            Copy Tailwind
           </span>
         </>
       )}
@@ -75,14 +76,14 @@ export function GithubExport({ palette }) {
         <>
           <CheckIcon className="size-3.5" />
           <span className="text-xs font-medium hidden sm:block">
-            Export to Github
+            Copy Github
           </span>
         </>
       ) : (
         <>
-          <ClipboardIcon className="size-3.5" />
+          <GithubIcon className="size-3.5" />
           <span className="text-xs font-medium hidden sm:block">
-            Export to Github
+            Copy Github
           </span>
         </>
       )}
