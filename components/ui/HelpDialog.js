@@ -14,7 +14,10 @@ import {
   TabPanel,
   TabPanels,
 } from "@headlessui/react";
-import { QuestionMarkCircleIcon } from "@heroicons/react/16/solid";
+import {
+  ArrowTopRightOnSquareIcon,
+  QuestionMarkCircleIcon,
+} from "@heroicons/react/16/solid";
 import { Drawer } from "vaul";
 
 import { useMediaQuery } from "@/utils/hooks";
@@ -39,8 +42,8 @@ export default function HelpDialog() {
           <CustomTab icon={GithubIcon} text="Github Issue" />
         </TabList>
         <TabPanels className="mt-3">
-          <TabPanel>
-            <div className="text-zinc-300 bg-zinc-900 p-4 rounded-xl text-sm mb-1.5 space-y-0.5">
+          <TabPanel className="space-y-1.5">
+            <div className="text-zinc-300 bg-zinc-900 p-4 rounded-xl text-sm space-y-0.5">
               <p>
                 To add your custom color palette, paste it into the{" "}
                 <span className="bg-zinc-800 text-vscode-green font-mono text-xs px-1 py-0.5 rounded">
@@ -61,11 +64,6 @@ export default function HelpDialog() {
             </div>
             <pre className="bg-zinc-900 p-4 rounded-xl">
               <code>
-                <p>
-                  <span className="text-vscode-green">
-                    // tailwind.config.js
-                  </span>
-                </p>
                 <p>
                   <span className="text-vscode-light-blue">theme</span>
                   <span className="text-zinc-300">:</span>
@@ -145,6 +143,152 @@ export default function HelpDialog() {
               </code>
             </pre>
           </TabPanel>
+          <TabPanel className="space-y-1.5">
+            <div className="text-zinc-300 bg-zinc-900 p-4 rounded-xl text-sm space-y-0.5">
+              <p>
+                Would you like to share your color palette with the community?
+                You can submit a feature request on my GitHub repository. I'll
+                review all submissions, but please make sure to follow these
+                guidelines:
+              </p>
+              <ul className="list-disc ml-4 space-y-0.5">
+                <li>
+                  Use the{" "}
+                  <span className="bg-zinc-800 text-vscode-light-blue font-mono text-xs px-1 py-0.5 rounded">
+                    "New Palette"
+                  </span>{" "}
+                  issue template when creating your request.
+                </li>
+                <li>Provide a clear name and description for your palette.</li>
+                <li>Include the complete color codes for your palette.</li>
+                <li>Explain the inspiration or use case for your palette.</li>
+              </ul>
+              <p>
+                Here's an example of how to structure your palette feature
+                request:
+              </p>
+            </div>
+            <pre className="bg-zinc-900 p-4 rounded-xl">
+              <code>
+                <p>
+                  <span className="text-vscode-yellow">{"{"}</span>
+                </p>
+                <p className="ml-2 md:ml-4">
+                  <span className="text-vscode-light-blue">name</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> "Sunset"</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-2 md:ml-4">
+                  <span className="text-vscode-light-blue">authors</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-purple">{" ["}</span>
+                  <span className="text-vscode-tan">"r4ultv"</span>
+                  <span className="text-vscode-purple">{"]"}</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-2 md:ml-4">
+                  <span className="text-vscode-light-blue">createdAt</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> "2024-09-27"</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-2 md:ml-4">
+                  <span className="text-vscode-light-blue">colors</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-purple">{" ["}</span>
+                </p>
+                <p className="ml-4 md:ml-8">
+                  <span className="text-vscode-blue">{"{"}</span>
+                </p>
+                <p className="ml-7 md:ml-14">
+                  <span className="text-vscode-light-blue">hex</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> "#FF6B6B"</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-7 md:ml-14">
+                  <span className="text-vscode-light-blue">rgb</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> "rgb(255,107,107)"</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-7 md:ml-14">
+                  <span className="text-vscode-light-blue">hsl</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> "hsl(0,100%,71%)"</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-7 md:ml-14">
+                  <span className="text-vscode-light-blue">className</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> "sunset-red"</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-4 md:ml-8">
+                  <span className="text-vscode-blue">{"}"}</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-4 md:ml-8">
+                  <span className="text-vscode-blue">{"{"}</span>
+                </p>
+                <p className="ml-7 md:ml-14">
+                  <span className="text-vscode-light-blue">hex</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> "#FFA06B"</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-7 md:ml-14">
+                  <span className="text-vscode-light-blue">rgb</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> "rgb(255,160,107)"</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-7 md:ml-14">
+                  <span className="text-vscode-light-blue">hsl</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> "hsl(20,100%,71%)"</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-7 md:ml-14">
+                  <span className="text-vscode-light-blue">className</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> "sunset-orange"</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-4 md:ml-8">
+                  <span className="text-vscode-blue">{"}"}</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-4 md:ml-8">
+                  <span className="text-zinc-300">...</span>
+                  <span className="text-vscode-light-blue">otherColors</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p className="ml-2 md:ml-4">
+                  <span className="text-vscode-purple">{"]"}</span>
+                  <span className="text-zinc-300">,</span>
+                </p>
+                <p>
+                  <span className="text-vscode-yellow">{"}"}</span>
+                </p>
+              </code>
+            </pre>
+            <div className="text-zinc-300 bg-zinc-900 p-4 rounded-xl text-sm space-y-0.5">
+              By following this format, you'll help me quickly understand and
+              evaluate your palette submission. Thank you for contributing to
+              our color palette collection!
+            </div>
+            <a
+              href="https://github.com/R4ULtv/tailwind-color-palette/issues/new?new_palette.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-zinc-200 text-zinc-900 px-8 py-1.5 rounded-lg text-sm font-semibold w-fit mx-auto flex items-center gap-1 justify-center shrink-0 select-none"
+            >
+              Create a Feature Request
+              <ArrowTopRightOnSquareIcon className="size-4" />
+            </a>
+          </TabPanel>
         </TabPanels>
       </TabGroup>
     ),
@@ -155,16 +299,22 @@ export default function HelpDialog() {
     <>
       <Button
         onClick={() => setIsOpen(true)}
-        className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center shrink-0 md:flex-none ml-auto md:ml-0 group select-none"
+        className="text-zinc-300 border border-zinc-700 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center shrink-0 md:flex-none ml-auto md:ml-0 group select-none"
       >
         <QuestionMarkCircleIcon className="size-4 transform group-data-[hover]:scale-110 group-data-[hover]:rotate-12 transition duration-150" />
-        <span className="hidden md:block">Help Center</span>
+        <span className="hidden md:block">Need Help?</span>
       </Button>
       {isDesktop ? (
         <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-          <DialogBackdrop className="fixed inset-0 bg-black/40 z-20 data-[closed]:opacity-0 ease-out duration-150" />
+          <DialogBackdrop
+            transition
+            className="fixed inset-0 bg-black/40 z-20 data-[closed]:opacity-0 ease-out duration-150"
+          />
           <div className="fixed inset-0 flex w-screen items-center justify-center p-4 z-20">
-            <DialogPanel className="bg-zinc-900/50 backdrop-blur-xl flex flex-col rounded-2xl max-w-2xl w-full max-h-[90%] h-auto outline-none z-20 data-[closed]:opacity-0 data-[closed]:scale-50 ease-out duration-150">
+            <DialogPanel
+              transition
+              className="bg-zinc-900/50 backdrop-blur-xl flex flex-col rounded-2xl max-w-2xl w-full max-h-[90%] h-auto outline-none z-20 data-[closed]:opacity-0 data-[closed]:scale-50 ease-out duration-150"
+            >
               <div className="p-6 flex-1 overflow-y-auto">
                 <DialogTitle className="font-bold text-gray-200">
                   Do you need Help?
