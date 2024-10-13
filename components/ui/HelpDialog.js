@@ -280,7 +280,7 @@ export default function HelpDialog() {
               our color palette collection!
             </div>
             <a
-              href="https://github.com/R4ULtv/tailwind-color-palette/issues/new?new_palette.md"
+              href="https://github.com/R4ULtv/tailwind-color-palette/issues/new?assignees=&labels=enhancement&projects=&template=new_palette.md&title=%5BPalette+Name%5D+-+New+Palette+Request"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-zinc-200 text-zinc-900 px-8 py-1.5 rounded-lg text-sm font-semibold w-fit mx-auto flex items-center gap-1 justify-center shrink-0 select-none"
