@@ -62,7 +62,7 @@ export default function HelpDialog() {
               </p>
               <p>Here's an example of how to structure it:</p>
             </div>
-            <pre className="bg-zinc-900 p-4 rounded-xl">
+            <pre className="bg-zinc-900 text-sm p-4 rounded-xl">
               <code>
                 <p>
                   <span className="text-vscode-light-blue">theme</span>
@@ -168,7 +168,7 @@ export default function HelpDialog() {
                 request:
               </p>
             </div>
-            <pre className="bg-zinc-900 p-4 rounded-xl">
+            <pre className="bg-zinc-900 text-sm p-4 rounded-xl">
               <code>
                 <p>
                   <span className="text-vscode-yellow">{"{"}</span>
@@ -299,7 +299,7 @@ export default function HelpDialog() {
     <>
       <Button
         onClick={() => setIsOpen(true)}
-        className="text-zinc-300 border border-zinc-700 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center shrink-0 md:flex-none ml-auto md:ml-0 group select-none"
+        className="text-zinc-300 border border-zinc-700 px-2.5 py-2 md:px-2 md:py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center shrink-0 md:flex-none ml-auto md:ml-0 group select-none"
       >
         <QuestionMarkCircleIcon className="size-4 transform group-data-[hover]:scale-110 group-data-[hover]:rotate-12 transition duration-150" />
         <span className="hidden md:block">Need Help?</span>

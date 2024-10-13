@@ -33,7 +33,7 @@ export default function NewPaletteButton() {
   return (
     <Button
       onClick={handleNewPalette}
-      className="bg-zinc-200 text-zinc-900 px-2 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center shrink-0 md:flex-none md:ml-auto group select-none"
+      className="bg-zinc-200 text-zinc-900 px-2.5 py-2 md:px-2 md:py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center shrink-0 md:flex-none md:ml-auto group select-none"
     >
       <SquaresPlusIcon className="size-4 transform group-data-[hover]:scale-110 group-data-[hover]:rotate-12 transition duration-150" />
       <span className="hidden md:block">Create Palette</span>
