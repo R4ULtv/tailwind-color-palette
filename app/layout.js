@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
         <body
           className={
             GeistSans.className +
-            " bg-zinc-100 dark:bg-zinc-900 selection:bg-zinc-400/25 dark:selection:bg-zinc-600/25 relative"
+            " bg-zinc-900 selection:bg-zinc-600/25 relative"
           }
         >
           <ColorsProvider>
