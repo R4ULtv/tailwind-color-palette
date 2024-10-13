@@ -6,9 +6,10 @@ import { ColorButtonPalette } from "@/components/ui/ColorButton";
 import { TailwindExport } from "@/components/ui/ExportButtons";
 import LocalPalette from "@/components/ui/LocalPalette";
 import NewPaletteButton from "@/components/ui/NewPaletteButton";
+import HelpDialog from "@/components/ui/HelpDialog";
 
 const PaletteItem = memo(({ item }) => (
-  <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 duration-75 transition rounded-xl md:rounded-2xl p-2">
+  <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 rounded-xl md:rounded-2xl p-2">
     <div className="flex items-center justify-between gap-8 my-1">
       <div className="text-sm text-zinc-200 font-medium ml-1.5">
         {item.name} -{" "}
@@ -51,6 +52,7 @@ export default function PaletteList() {
   return (
     <div className="mt-8 md:mt-4 pt-4 space-y-3">
       <div className="flex items-center justify-end gap-2">
+        <HelpDialog />
         <NewPaletteButton />
         <SelectFormatMenu />
       </div>
