@@ -21,12 +21,16 @@ import {
 import { Drawer } from "vaul";
 
 import { useMediaQuery } from "@/utils/hooks";
-import { GithubIcon, TailwindIcon } from "@/utils/icons";
+import { CssIcon, GithubIcon, TailwindIcon } from "@/utils/icons";
 
 const CustomTab = ({ icon: Icon, text }) => (
   <Tab className="group text-zinc-100 data-[selected]:text-zinc-900 data-[selected]:bg-zinc-200 hover:bg-zinc-200 hover:text-zinc-900 font-medium flex items-center gap-1 transition duration-150 ease-out px-2 py-1 rounded-md text-sm">
     <Icon className="size-4 group-hover:scale-110 group-hover:rotate-12" />
-    {text}
+    {text.split(" ").map((word, index) => (
+      <span key={index} className="last:hidden last:md:block">
+        {word}{" "}
+      </span>
+    ))}
   </Tab>
 );
 
@@ -39,6 +43,7 @@ export default function HelpDialog() {
       <TabGroup>
         <TabList className="flex items-center justify-center md:justify-start gap-1.5 mt-1">
           <CustomTab icon={TailwindIcon} text="Tailwind Config" />
+          <CustomTab icon={CssIcon} text="CSS Variables" />
           <CustomTab icon={GithubIcon} text="Github Issue" />
         </TabList>
         <TabPanels className="mt-3">
@@ -136,6 +141,73 @@ export default function HelpDialog() {
                 <p className="ml-2 md:ml-4">
                   <span className="text-vscode-purple">{"}"}</span>
                   <span className="text-zinc-300">,</span>
+                </p>
+                <p>
+                  <span className="text-vscode-yellow">{"}"}</span>
+                </p>
+              </code>
+            </pre>
+          </TabPanel>
+          <TabPanel className="space-y-1.5">
+            <div className="text-zinc-300 bg-zinc-900 p-4 rounded-xl text-sm space-y-0.5">
+              <p>
+                To add your custom color palette, paste it into the{" "}
+                <span className="bg-zinc-800 text-vscode-green font-mono text-xs px-1 py-0.5 rounded">
+                  index.css
+                </span>{" "}
+                file. You can add your palette as CSS variables within the{" "}
+                <span className="bg-zinc-800 text-vscode-light-blue font-mono text-xs px-1 py-0.5 rounded">
+                  :root
+                </span>{" "}
+                selector.
+              </p>
+              <p>
+                This method allows you to use your custom palette throughout
+                your project.
+              </p>
+              <p>Here's an example of how to structure it:</p>
+            </div>
+            <pre className="bg-zinc-900 text-sm p-4 rounded-xl">
+              <code>
+                <p>
+                  <span className="text-vscode-light-yellow">:root</span>
+                  <span className="text-vscode-yellow">{" {"}</span>
+                </p>
+                <p className="ml-2 md:ml-4">
+                  <span className="text-vscode-light-blue">--sunset-red</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> #FF6B6B</span>
+                  <span className="text-zinc-300">;</span>
+                </p>
+                <p className="ml-2 md:ml-4">
+                  <span className="text-vscode-light-blue">
+                    --sunset-orange
+                  </span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> #FFA06B</span>
+                  <span className="text-zinc-300">;</span>
+                </p>
+                <p className="ml-2 md:ml-4">
+                  <span className="text-vscode-light-blue">
+                    --sunset-yellow
+                  </span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> #FFD56B</span>
+                  <span className="text-zinc-300">;</span>
+                </p>
+                <p className="ml-2 md:ml-4">
+                  <span className="text-vscode-light-blue">--sunset-pink</span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> #FF6BE3</span>
+                  <span className="text-zinc-300">;</span>
+                </p>
+                <p className="ml-2 md:ml-4">
+                  <span className="text-vscode-light-blue">
+                    --sunset-light-orange
+                  </span>
+                  <span className="text-zinc-300">:</span>
+                  <span className="text-vscode-tan"> #FF9F6B</span>
+                  <span className="text-zinc-300">;</span>
                 </p>
                 <p>
                   <span className="text-vscode-yellow">{"}"}</span>
@@ -299,7 +371,7 @@ export default function HelpDialog() {
     <>
       <Button
         onClick={() => setIsOpen(true)}
-        className="text-zinc-300 border border-zinc-700 px-2.5 py-2 md:px-2 md:py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center shrink-0 md:flex-none ml-auto md:ml-0 group select-none"
+        className="text-zinc-300 border border-zinc-700 px-2.5 py-2 md:px-2 md:py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center shrink-0 md:flex-none group select-none"
       >
         <QuestionMarkCircleIcon className="size-4 transform group-data-[hover]:scale-110 group-data-[hover]:rotate-12 transition duration-150" />
         <span className="hidden md:block">Need Help?</span>
