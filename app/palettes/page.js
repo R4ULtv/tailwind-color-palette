@@ -3,7 +3,10 @@ import { palette } from "@/lib/palette";
 
 import SelectFormatMenu from "@/components/ui/SelectFormatMenu";
 import { ColorButtonPalette } from "@/components/ui/ColorButton";
-import { TailwindExport } from "@/components/ui/ExportButtons";
+import {
+  CssVariablesExport,
+  TailwindExport,
+} from "@/components/ui/ExportButtons";
 import LocalPalette from "@/components/ui/LocalPalette";
 import NewPaletteButton from "@/components/ui/NewPaletteButton";
 import HelpDialog from "@/components/ui/HelpDialog";
@@ -27,6 +30,10 @@ const PaletteItem = memo(({ item }) => (
         ))}
       </div>
       <div className="flex items-center gap-1">
+        <CssVariablesExport
+          className={item.name.toLowerCase()}
+          colors={item.colors}
+        />
         <TailwindExport
           className={item.name.toLowerCase()}
           colors={item.colors}
@@ -51,10 +58,12 @@ PaletteItem.displayName = "PaletteItem";
 export default function PaletteList() {
   return (
     <div className="mt-8 md:mt-4 pt-4 space-y-3">
-      <div className="flex items-center justify-end gap-2">
+      <div className="flex items-center justify-between gap-2">
         <HelpDialog />
-        <NewPaletteButton />
-        <SelectFormatMenu />
+        <div className="flex gap-2">
+          <NewPaletteButton />
+          <SelectFormatMenu />
+        </div>
       </div>
       <div className="grid gap-4 md:gap-6">
         <LocalPalette />

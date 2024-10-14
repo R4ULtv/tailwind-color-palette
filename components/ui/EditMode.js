@@ -20,7 +20,11 @@ import {
 import { HexColorPicker } from "react-colorful";
 
 import { ColorButtonPalette } from "@/components/ui/ColorButton";
-import { TailwindExport, GithubExport } from "@/components/ui/ExportButtons";
+import {
+  TailwindExport,
+  GithubExport,
+  CssVariablesExport,
+} from "@/components/ui/ExportButtons";
 import { useColors } from "@/components/providers/ColorsContext";
 import {
   convertHexColor,
@@ -223,7 +227,7 @@ export const PaletteItem = memo(({ item }) => {
 
   return (
     <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 duration-75 transition rounded-xl md:rounded-2xl p-2">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 my-1">
+      <div className="flex flex-row items-center justify-between gap-4 my-1">
         <div className="text-sm text-zinc-200 font-medium ml-1.5">
           {isEditing ? (
             renderEditFields()
@@ -300,6 +304,10 @@ export const PaletteItem = memo(({ item }) => {
           {!isEditing && (
             <>
               <GithubExport palette={JSON.stringify(item)} />
+              <CssVariablesExport
+                className={item.name.toLowerCase()}
+                colors={item.colors}
+              />
               <TailwindExport
                 className={item.name.toLowerCase()}
                 colors={item.colors}
