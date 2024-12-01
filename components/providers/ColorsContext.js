@@ -21,6 +21,7 @@ export function ColorsProvider({ children }) {
     { name: "hex", shortcut: "h", example: "#f1f5f9" },
     { name: "rgb", shortcut: "r", example: "rgb(241,245,249)" },
     { name: "hsl", shortcut: "l", example: "hsl(210,40%,96.1%)" },
+    { name: "oklch", shortcut: "o", example: "oklch(96.27% 0.0132 238.66)" },
   ];
 
   useEffect(() => {
