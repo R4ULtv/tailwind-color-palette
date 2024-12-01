@@ -41,7 +41,7 @@ export default function SelectFormatMenu() {
           <ListboxOption
             key={item.name}
             value={item.name}
-            className="group flex items-center justify-between gap-8 rounded-md py-1.5 px-3 select-none data-[focus]:bg-zinc-800 text-zinc-200"
+            className="group flex items-center justify-between gap-3 rounded-md py-1.5 px-3 select-none data-[focus]:bg-zinc-800 text-zinc-200"
           >
             <div className="flex cursor-default items-center gap-2">
               <div className="text-sm group-data-[selected]:font-semibold">
