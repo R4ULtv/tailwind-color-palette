@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-import { Button, Transition } from "@headlessui/react";
 import { ClipboardDocumentCheckIcon } from "@heroicons/react/24/solid";
 import { useColors } from "@/components/providers/ColorsContext";
 
@@ -16,26 +15,26 @@ const CopyButton = ({ copyValue, backgroundColor, textColor }) => {
   }, [copyValue]);
 
   return (
-    <Button
+    <button
       onClick={copyToClipboard}
-      className="w-auto h-auto flex-1 flex flex-col gap-1.5 transition duration-75 data-[hover]:border-zinc-600 data-[focus]:border-zinc-500 outline-none group"
+      className="w-auto h-auto flex-1 flex flex-col gap-1.5 outline-none group"
     >
       <div
         className="rounded-xl flex-1 aspect-[5/1] md:aspect-[2/1] w-full h-auto relative max-h-40"
         style={{ backgroundColor }}
       >
-        <Transition show={!!copiedText}>
+        {copiedText && (
           <div className="absolute inset-0 flex items-center justify-center transform transition duration-75 ease-in-out data-[closed]:opacity-0 group/icon">
             <ClipboardDocumentCheckIcon
               className={`size-9 group-data-[closed]/icon:scale-50 p-2 rounded-xl ${textColor}`}
             />
           </div>
-        </Transition>
+        )}
       </div>
       <div className="text-sm font-medium text-zinc-400 group-hover:text-zinc-200 truncate w-full px-2">
         {copyValue}
       </div>
-    </Button>
+    </button>
   );
 };
 
