@@ -4,7 +4,7 @@ import { ColorButtonTailwind } from "@/components/ui/ColorButton";
 import SelectFormatMenu from "@/components/ui/SelectFormatMenu";
 
 const ColorGroup = memo(({ color, items }) => (
-  <div className="flex flex-col md:flex-row gap-2 overflow-x-auto border border-zinc-800 hover:border-zinc-700 rounded-xl md:rounded-2xl p-2">
+  <div className="flex flex-col md:flex-row gap-2 overflow-x-auto">
     {items.map((item) => (
       <ColorButtonTailwind
         key={`${color}-${item.scale}`}
@@ -23,7 +23,7 @@ export default function Home() {
       <div className="flex items-center justify-end">
         <SelectFormatMenu />
       </div>
-      <div className="grid gap-4 md:gap-6">
+      <div className="grid gap-4 md:gap-2">
         {Object.entries(colors).map(([color, items]) => (
           <ColorGroup key={color} color={color} items={items} />
         ))}

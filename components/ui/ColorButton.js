@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-import { ClipboardDocumentCheckIcon } from "@heroicons/react/24/solid";
+import { CheckIcon } from "@heroicons/react/16/solid";
 import { useColors } from "@/components/providers/ColorsContext";
 
-const CopyButton = ({ copyValue, backgroundColor, textColor }) => {
+const CopyButton = ({ value, copyValue, backgroundColor }) => {
   const [copiedText, setCopiedText] = useState("");
 
   const copyToClipboard = useCallback(() => {
@@ -20,19 +20,17 @@ const CopyButton = ({ copyValue, backgroundColor, textColor }) => {
       className="w-auto h-auto flex-1 flex flex-col gap-1.5 outline-none group"
     >
       <div
-        className="rounded-xl flex-1 aspect-[5/1] md:aspect-[2/1] w-full h-auto relative max-h-40"
+        className="rounded-xl flex-1 aspect-[3/1] md:aspect-[2/1] w-full h-auto relative max-h-40 overflow-hidden"
         style={{ backgroundColor }}
       >
         {copiedText && (
-          <div className="absolute inset-0 flex items-center justify-center transform transition duration-75 ease-in-out data-[closed]:opacity-0 group/icon">
-            <ClipboardDocumentCheckIcon
-              className={`size-9 group-data-[closed]/icon:scale-50 p-2 rounded-xl ${textColor}`}
-            />
+          <div className="absolute inset-0 flex items-center justify-center bg-white">
+            <CheckIcon className="size-5 rounded-xl text-black" />
           </div>
         )}
       </div>
       <div className="text-sm font-medium text-zinc-400 group-hover:text-zinc-200 truncate w-full px-2">
-        {copyValue}
+        {value}
       </div>
     </button>
   );
@@ -44,16 +42,12 @@ export function ColorButtonTailwind({ item, color }) {
     () => (format === "className" ? `${color}-${item.scale}` : item[format]),
     [format, color, item]
   );
-  const textColor =
-    item.scale < 500
-      ? "text-zinc-200 bg-zinc-800"
-      : "text-zinc-800 bg-zinc-200";
 
   return (
     <CopyButton
+      value={`${color}-${item.scale}`}
       copyValue={copyValue}
       backgroundColor={item.hex}
-      textColor={textColor}
     />
   );
 }
@@ -64,6 +58,7 @@ export function ColorButtonPalette({ color }) {
 
   return (
     <CopyButton
+      value={copyValue}
       copyValue={copyValue}
       backgroundColor={color.hex}
       textColor="text-zinc-200 bg-zinc-800"
