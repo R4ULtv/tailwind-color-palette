@@ -11,15 +11,12 @@ export const metadata = {
   metadataBase: process.env.HOST_NAME,
   title: "Tailwind Color Palette",
   description:
-    "Browse through the Tailwind CSS colors in HSL, RGB, and HEX formats.",
+    "Explore Tailwind CSS colors in various formats including HSL, RGB, HEX, and the new OKLCH format for better color accuracy.",
   openGraph: {
-    title: "Tailwind Color Palette",
-    description:
-      "Browse through the Tailwind CSS colors in HSL, RGB, and HEX formats.",
     url: process.env.HOST_NAME,
     images: [
       {
-        url: `${process.env.HOST_NAME}/og-image.png`,
+        url: "/og-image.png",
         width: 843,
         height: 441,
       },
@@ -44,7 +41,7 @@ export default function RootLayout({ children }) {
                   Tailwind Color Palette
                 </h1>
                 <p className="text-sm md:text-base text-zinc-300 font-medium mt-1.5 z-10 relative">
-                  Tailwind CSS colors in HSL, RGB, and HEX formats.
+                  Tailwind CSS colors in HSL, RGB, HEX and OKLCH formats.
                 </p>
 
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-2 mt-4 z-10 relative">
