@@ -10,6 +10,7 @@ import {
 import LocalPalette from "@/components/ui/LocalPalette";
 import NewPaletteButton from "@/components/ui/NewPaletteButton";
 import HelpDialog from "@/components/ui/HelpDialog";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const PaletteItem = memo(({ item }) => (
   <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 rounded-xl md:rounded-2xl p-2">
@@ -65,12 +66,14 @@ export default function PaletteList() {
           <SelectFormatMenu />
         </div>
       </div>
-      <div className="grid gap-4 md:gap-6">
-        <LocalPalette />
-        {palette.map((item) => (
-          <PaletteItem key={item.name} item={item} />
-        ))}
-      </div>
+      <TooltipProvider>
+        <div className="grid gap-4 md:gap-2">
+          <LocalPalette />
+          {palette.map((item) => (
+            <PaletteItem key={item.name} item={item} />
+          ))}
+        </div>
+      </TooltipProvider>
     </div>
   );
 }
