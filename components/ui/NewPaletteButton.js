@@ -23,6 +23,7 @@ export default function NewPaletteButton() {
             hex: randomColor,
             rgb: convertHexColor(randomColor, "rgb"),
             hsl: convertHexColor(randomColor, "hsl"),
+            oklch: convertHexColor(randomColor, "oklch"),
             className: "",
           },
         ],

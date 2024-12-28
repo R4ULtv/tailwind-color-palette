@@ -105,6 +105,7 @@ export const PaletteItem = memo(({ item }) => {
           hex: randomColor,
           rgb: convertHexColor(randomColor, "rgb"),
           hsl: convertHexColor(randomColor, "hsl"),
+          oklch: convertHexColor(randomColor, "oklch"),
           className: "",
         },
       ],
@@ -199,6 +200,7 @@ export const PaletteItem = memo(({ item }) => {
                       hex: newColor,
                       rgb: convertHexColor(newColor, "rgb"),
                       hsl: convertHexColor(newColor, "hsl"),
+                      oklch: convertHexColor(newColor, "oklch"),
                     }
                   : c
               ),
@@ -224,6 +226,8 @@ export const PaletteItem = memo(({ item }) => {
       </PopoverPanel>
     </Popover>
   );
+
+  console.log(editPalette)
 
   return (
     <div className="flex flex-col gap-1.5 border border-zinc-800 hover:border-zinc-700 duration-75 transition rounded-xl md:rounded-2xl p-2">
