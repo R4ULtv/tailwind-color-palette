@@ -9,7 +9,7 @@ import {
 import {
   CheckIcon,
   ChevronUpDownIcon,
-  FunnelIcon,
+  ViewfinderCircleIcon,
 } from "@heroicons/react/16/solid";
 
 import { useColors } from "@/components/providers/ColorsContext";
@@ -21,7 +21,7 @@ export default function SelectFormatMenu() {
     <Listbox value={format} onChange={setFormat}>
       <ListboxButton className="flex items-center justify-between gap-3 rounded-lg py-1.5 px-2 text-left text-sm text-zinc-300 border border-zinc-700 shrink-0 group select-none">
         <div className="flex items-center gap-1 justify-center">
-          <FunnelIcon
+          <ViewfinderCircleIcon
             className="size-4 transform group-data-[hover]:scale-110 group-data-[hover]:rotate-12 transition duration-150"
             aria-hidden="true"
           />
