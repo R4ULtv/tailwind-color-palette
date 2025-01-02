@@ -12,6 +12,7 @@ const ColorsContext = createContext();
 
 export function ColorsProvider({ children }) {
   const [format, setFormat] = useState("className");
+  const [indicator, setIndicator] = useState(false);
   const [localPalette, setLocalPalette] = useState([]);
   const [editPalette, setEditPalette] = useState(null);
   const [isNewPalette, setIsNewPalette] = useState(false);
@@ -49,6 +50,7 @@ export function ColorsProvider({ children }) {
         ) {
           e.preventDefault();
           setFormat(item.name);
+          setIndicator(true);
           localStorage.setItem("colors-format", item.name);
         }
       });
@@ -67,6 +69,7 @@ export function ColorsProvider({ children }) {
         );
         const nextIndex = (currentIndex + 1) % formatList.length;
         setFormat(formatList[nextIndex].name);
+        setIndicator(true);
         localStorage.setItem("colors-format", formatList[nextIndex].name);
       } else if (
         e.key === "q" &&
@@ -83,6 +86,7 @@ export function ColorsProvider({ children }) {
         const nextIndex =
           (currentIndex - 1 + formatList.length) % formatList.length;
         setFormat(formatList[nextIndex].name);
+        setIndicator(true);
         localStorage.setItem("colors-format", formatList[nextIndex].name);
       }
     },
@@ -117,6 +121,8 @@ export function ColorsProvider({ children }) {
         setEditPalette,
         isNewPalette,
         setIsNewPalette,
+        indicator,
+        setIndicator,
       }}
     >
       {children}

@@ -6,6 +6,7 @@ import { ViewTransitions } from "next-view-transitions";
 import { PaintBrushIcon, SwatchIcon } from "@heroicons/react/16/solid";
 import { ColorsProvider } from "@/components/providers/ColorsContext";
 import ShortCutMenu from "@/components/ui/ShortcutMenu";
+import FormatIndicator from "@/components/ui/FormatIndicator";
 
 export const metadata = {
   metadataBase: process.env.HOST_NAME,
@@ -69,6 +70,7 @@ export default function RootLayout({ children }) {
               </div>
               {children}
             </main>
+            <FormatIndicator />
             <footer className="max-w-screen-2xl px-4 mx-auto py-3">
               <div className="flex items-center justify-between text-sm text-zinc-400">
                 <p>
