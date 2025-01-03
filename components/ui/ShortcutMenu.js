@@ -24,6 +24,7 @@ export default function ShortCutMenu() {
         </DropdownMenuItem>
         {formatList.map((item) => (
           <DropdownMenuItem
+            key={item.name}
             onSelect={() => {
               setFormat(item.name);
               setIndicator(true);
