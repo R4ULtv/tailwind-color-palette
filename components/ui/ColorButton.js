@@ -3,7 +3,11 @@
 import { useState, useCallback, useMemo } from "react";
 import { CheckIcon } from "@heroicons/react/16/solid";
 import { useColors } from "@/components/providers/ColorsContext";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const CopyButton = ({ item, color, copyValue, backgroundColor }) => {
   const [copiedText, setCopiedText] = useState("");
@@ -41,36 +45,53 @@ const CopyButton = ({ item, color, copyValue, backgroundColor }) => {
         <div className="space-y-0.5">
           <div
             className={
-              `text-sm text-zinc-300 truncate w-full px-1.5 rounded ` +
-              (copyValue === item.hex ? "bg-zinc-800" : "")
+              `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
+              (copyValue === `${color}-${item.scale}`
+                ? "bg-zinc-800 text-zinc-100"
+                : "text-zinc-400")
             }
           >
-            hex: <code className="font-medium text-zinc-200">{item.hex}</code>
+            <code>{`${color}-${item.scale}`}</code>
           </div>
           <div
             className={
-              `text-sm text-zinc-300 truncate w-full px-1.5 rounded ` +
-              (copyValue === item.rgb ? "bg-zinc-800" : "")
+              `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
+              (copyValue === item.hex
+                ? "bg-zinc-800 text-zinc-100"
+                : "text-zinc-400")
             }
           >
-            rgb: <code className="font-medium text-zinc-200">{item.rgb}</code>
+            <code>{item.hex}</code>
           </div>
           <div
             className={
-              `text-sm text-zinc-300 truncate w-full px-1.5 rounded ` +
-              (copyValue === item.hsl ? "bg-zinc-800" : "")
+              `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
+              (copyValue === item.rgb
+                ? "bg-zinc-800 text-zinc-100"
+                : "text-zinc-400")
             }
           >
-            hsl: <code className="font-medium text-zinc-200">{item.hsl}</code>
+            <code>{item.rgb}</code>
           </div>
           <div
             className={
-              `text-sm text-zinc-300 truncate w-full px-1.5 rounded ` +
-              (copyValue === item.oklch ? "bg-zinc-800" : "")
+              `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
+              (copyValue === item.hsl
+                ? "bg-zinc-800 text-zinc-100"
+                : "text-zinc-400")
             }
           >
-            oklch:{" "}
-            <code className="font-medium text-zinc-200">{item.oklch}</code>
+            <code>{item.hsl}</code>
+          </div>
+          <div
+            className={
+              `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
+              (copyValue === item.oklch
+                ? "bg-zinc-800 text-zinc-100"
+                : "text-zinc-400")
+            }
+          >
+            <code>{item.oklch}</code>
           </div>
         </div>
       </TooltipContent>
@@ -90,7 +111,7 @@ export function ColorButtonTailwind({ item, color }) {
       item={item}
       color={color}
       copyValue={copyValue}
-      backgroundColor={item.hex}
+      backgroundColor={item.oklch}
     />
   );
 }
