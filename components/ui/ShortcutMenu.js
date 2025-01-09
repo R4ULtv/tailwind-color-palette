@@ -18,7 +18,7 @@ export default function ShortCutMenu() {
         <BoltIcon className="size-3 group-hover:fill-amber-400 transform group-hover:scale-110 group-hover:rotate-180 transition duration-150" />
         <span className="text-xs font-bold">ShortCuts</span>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent align="end">
         <DropdownMenuItem>
           Rotate Formats <DropdownMenuShortcut>q/e</DropdownMenuShortcut>
         </DropdownMenuItem>
