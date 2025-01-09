@@ -15,7 +15,7 @@ export default function FormatIndicator() {
       }, 2000);
     }
     return () => clearTimeout(timer);
-  }, [indicator, setIndicator]);
+  }, [format, setIndicator]);
 
   return (
     <div
