@@ -43,16 +43,30 @@ const CopyButton = ({ item, color, copyValue, backgroundColor }) => {
       </TooltipTrigger>
       <TooltipContent>
         <div className="space-y-0.5">
-          <div
-            className={
-              `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
-              (copyValue === `${color}-${item.scale}`
-                ? "bg-zinc-800 text-zinc-100"
-                : "text-zinc-400")
-            }
-          >
-            <code>{`${color}-${item.scale}`}</code>
-          </div>
+          {item.scale && (
+            <div
+              className={
+                `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
+                (copyValue === `${color}-${item.scale}`
+                  ? "bg-zinc-800 text-zinc-100"
+                  : "text-zinc-400")
+              }
+            >
+              <code>{`${color}-${item.scale}`}</code>
+            </div>
+          )}
+          {item.className && (
+            <div
+              className={
+                `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
+                (copyValue === item.className
+                  ? "bg-zinc-800 text-zinc-100"
+                  : "text-zinc-400")
+              }
+            >
+              <code>{item.className}</code>
+            </div>
+          )}
           <div
             className={
               `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
@@ -103,7 +117,7 @@ export function ColorButtonTailwind({ item, color }) {
   const { format } = useColors();
   const copyValue = useMemo(
     () => (format === "className" ? `${color}-${item.scale}` : item[format]),
-    [format, color, item]
+    [format, color, item],
   );
 
   return (
