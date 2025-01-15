@@ -43,16 +43,11 @@ const CopyButton = ({ item, color, copyValue, backgroundColor }) => {
       </TooltipTrigger>
       <TooltipContent>
         <div className="space-y-0.5">
-          <div
-            className={
-              `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
-              (copyValue === `${color}-${item.scale}`
-                ? "bg-zinc-800 text-zinc-100"
-                : "text-zinc-400")
-            }
-          >
-            <code>{`${color}-${item.scale}`}</code>
-          </div>
+          {item.scale && copyValue === `${color}-${item.scale}` && (
+            <div className="text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg bg-zinc-800 text-zinc-100">
+              <code>{`${color}-${item.scale}`}</code>
+            </div>
+          )}
           <div
             className={
               `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
