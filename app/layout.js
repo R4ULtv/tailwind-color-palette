@@ -1,6 +1,7 @@
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/react";
 
 import { PaintBrushIcon, SwatchIcon } from "@heroicons/react/16/solid";
 import { ColorsProvider } from "@/components/providers/ColorsContext";
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
           GeistSans.className + " bg-zinc-900 selection:bg-zinc-600/25 relative"
         }
       >
+        <Analytics />
         <ColorsProvider>
           <main className="max-w-screen-2xl py-8 md:py-16 px-4 mx-auto">
             <div className="relative">
