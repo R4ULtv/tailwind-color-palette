@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
       >
         <Analytics />
         <ColorsProvider>
-          <main className="max-w-screen-2xl py-8 md:py-16 px-4 mx-auto">
+          <main className="max-w-(--breakpoint-2xl) py-8 md:py-16 px-4 mx-auto">
             <div className="relative">
               <h1 className="text-2xl md:text-3xl text-zinc-100 font-bold z-10 relative">
                 Tailwind Color Palette
@@ -70,7 +70,7 @@ export default function RootLayout({ children }) {
             {children}
           </main>
           <FormatIndicator />
-          <footer className="max-w-screen-2xl px-4 mx-auto py-3">
+          <footer className="max-w-(--breakpoint-2xl) px-4 mx-auto py-3">
             <div className="flex items-center justify-between text-sm text-zinc-400">
               <p>
                 Built by{" "}
