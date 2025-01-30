@@ -141,7 +141,7 @@ export const PaletteItem = memo(({ item }) => {
           required
           type="text"
           placeholder="Sunset..."
-          className="mt-2 py-1 px-2 text-start font-medium bg-transparent placeholder:text-zinc-500 text-zinc-300 border border-zinc-700 rounded-lg w-full outline-none"
+          className="mt-2 py-1 px-2 text-start font-medium bg-transparent placeholder:text-zinc-500 text-zinc-300 border border-zinc-700 rounded-lg w-full outline-hidden"
           value={editPalette.name}
           onChange={handleEditName}
         />
@@ -152,7 +152,7 @@ export const PaletteItem = memo(({ item }) => {
           required
           type="text"
           placeholder="r4ultv, ..."
-          className="mt-2 py-1 px-2 text-start font-medium bg-transparent placeholder:text-zinc-500 text-zinc-300 border border-zinc-700 rounded-lg w-full outline-none"
+          className="mt-2 py-1 px-2 text-start font-medium bg-transparent placeholder:text-zinc-500 text-zinc-300 border border-zinc-700 rounded-lg w-full outline-hidden"
           value={editPalette.authors.join(", ")}
           onChange={handleEditAuthors}
         />
@@ -164,7 +164,7 @@ export const PaletteItem = memo(({ item }) => {
     <Popover key={index} className="relative w-auto h-auto flex-1">
       <div className="w-full h-full flex flex-col gap-1.5">
         <PopoverButton
-          className="rounded-xl flex-1 aspect-[5/1] md:aspect-[2/1] w-full h-auto max-h-40"
+          className="rounded-xl flex-1 aspect-5/1 md:aspect-2/1 w-full h-auto max-h-40"
           style={{ backgroundColor: color.hex }}
         />
         <Input
@@ -180,13 +180,13 @@ export const PaletteItem = memo(({ item }) => {
               ),
             }))
           }
-          className="text-sm mt-2 py-1 text-center font-medium bg-transparent placeholder:text-zinc-500 text-zinc-300 border border-zinc-700 rounded-lg w-full outline-none"
+          className="text-sm mt-2 py-1 text-center font-medium bg-transparent placeholder:text-zinc-500 text-zinc-300 border border-zinc-700 rounded-lg w-full outline-hidden"
         />
       </div>
       <PopoverPanel
         transition
         anchor="top"
-        className="z-50 transition duration-150 ease-in-out translate-y-2 data-[closed]:opacity-0 data-[closed]:scale-50 overflow-hidden bg-zinc-900 border border-zinc-700 rounded-xl pt-4 px-4 pb-2"
+        className="z-50 transition duration-150 ease-in-out translate-y-2 data-closed:opacity-0 data-closed:scale-50 overflow-hidden bg-zinc-900 border border-zinc-700 rounded-xl pt-4 px-4 pb-2"
       >
         <HexColorPicker
           color={color.hex}
@@ -210,7 +210,7 @@ export const PaletteItem = memo(({ item }) => {
         <Input
           required
           type="text"
-          className="text-sm mt-2 py-1 text-center font-medium bg-transparent text-zinc-300 border border-zinc-700 rounded-lg w-full outline-none"
+          className="text-sm mt-2 py-1 text-center font-medium bg-transparent text-zinc-300 border border-zinc-700 rounded-lg w-full outline-hidden"
           value={color.hex}
           onChange={(e) => {
             if (isValidColorFormat(e.target.value)) {
@@ -256,7 +256,7 @@ export const PaletteItem = memo(({ item }) => {
         <div className="flex items-center gap-1">
           <Button
             onClick={handleSave}
-            className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out select-none"
+            className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-hover:border-zinc-600 transition duration-75 ease-in-out select-none"
           >
             {isEditing ? (
               <>
@@ -278,7 +278,7 @@ export const PaletteItem = memo(({ item }) => {
             <>
               <Button
                 onClick={handleAddColor}
-                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out select-none"
+                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-hover:border-zinc-600 transition duration-75 ease-in-out select-none"
               >
                 <PlusCircleIcon className="size-3.5" />
                 <span className="text-xs font-medium hidden sm:block">
@@ -287,7 +287,7 @@ export const PaletteItem = memo(({ item }) => {
               </Button>
               <Button
                 onClick={handleRemoveColor}
-                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out select-none"
+                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-hover:border-zinc-600 transition duration-75 ease-in-out select-none"
               >
                 <BackspaceIcon className="size-3.5" />
                 <span className="text-xs font-medium hidden sm:block">
@@ -296,7 +296,7 @@ export const PaletteItem = memo(({ item }) => {
               </Button>
               <Button
                 onClick={handleDelete}
-                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out select-none"
+                className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-hover:border-zinc-600 transition duration-75 ease-in-out select-none"
               >
                 <TrashIcon className="size-3.5" />
                 <span className="text-xs font-medium hidden sm:block">

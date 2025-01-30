@@ -33,7 +33,7 @@ export function TailwindExport({ className, colors }) {
   return (
     <Button
       onClick={handleCopy}
-      className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out"
+      className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-hover:border-zinc-600 transition duration-75 ease-in-out"
     >
       {isCopied ? (
         <>
@@ -70,7 +70,7 @@ export function GithubExport({ palette }) {
   return (
     <Button
       onClick={handleCopy}
-      className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out"
+      className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-hover:border-zinc-600 transition duration-75 ease-in-out"
     >
       {isCopied ? (
         <>
@@ -119,7 +119,7 @@ export function CssVariablesExport({ className, colors }) {
   return (
     <Button
       onClick={handleCopy}
-      className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-[hover]:border-zinc-600 transition duration-75 ease-in-out"
+      className="p-1.5 rounded-lg border border-zinc-700 text-zinc-200 group flex items-center gap-1 data-hover:border-zinc-600 transition duration-75 ease-in-out"
     >
       {isCopied ? (
         <>

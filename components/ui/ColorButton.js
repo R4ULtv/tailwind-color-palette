@@ -24,10 +24,10 @@ const CopyButton = ({ item, color, copyValue, backgroundColor }) => {
       <TooltipTrigger asChild>
         <button
           onClick={copyToClipboard}
-          className="w-auto h-auto flex-1 flex flex-col gap-1.5 outline-none group"
+          className="w-auto h-auto flex-1 flex flex-col gap-1.5 outline-hidden group"
         >
           <div
-            className="rounded-xl flex-1 aspect-[3/1] md:aspect-[2/1] w-full h-auto relative max-h-40 overflow-hidden"
+            className="rounded-xl flex-1 aspect-3/1 md:aspect-2/1 w-full h-auto relative max-h-40 overflow-hidden"
             style={{ backgroundColor }}
           >
             {copiedText && (

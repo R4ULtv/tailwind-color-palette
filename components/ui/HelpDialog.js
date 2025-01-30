@@ -24,10 +24,10 @@ import { useMediaQuery } from "@/utils/hooks";
 import { CssIcon, GithubIcon, TailwindIcon } from "@/utils/icons";
 
 const CustomTab = ({ icon: Icon, text }) => (
-  <Tab className="group text-zinc-100 data-[selected]:text-zinc-900 data-[selected]:bg-zinc-200 hover:bg-zinc-200 hover:text-zinc-900 font-medium flex items-center gap-1 transition duration-150 ease-out px-2 py-1 rounded-md text-sm">
+  <Tab className="group text-zinc-100 data-selected:text-zinc-900 data-selected:bg-zinc-200 hover:bg-zinc-200 hover:text-zinc-900 font-medium flex items-center gap-1 transition duration-150 ease-out px-2 py-1 rounded-md text-sm">
     <Icon className="size-4 group-hover:scale-110 group-hover:rotate-12" />
     {text.split(" ").map((word, index) => (
-      <span key={index} className="last:hidden last:md:block">
+      <span key={index} className="last:hidden md:last:block">
         {word}{" "}
       </span>
     ))}
@@ -51,12 +51,12 @@ export default function HelpDialog() {
             <div className="text-zinc-300 bg-zinc-900 p-4 rounded-xl text-sm space-y-0.5">
               <p>
                 To add your custom color palette, paste it into the{" "}
-                <span className="bg-zinc-800 text-vscode-green font-mono text-xs px-1 py-0.5 rounded">
+                <span className="bg-zinc-800 text-vscode-green font-mono text-xs px-1 py-0.5 rounded-sm">
                   tailwind.config.js
                 </span>{" "}
                 file. The recommended approach is to insert your new palette
                 within the{" "}
-                <span className="bg-zinc-800 text-vscode-light-blue font-mono text-xs px-1 py-0.5 rounded">
+                <span className="bg-zinc-800 text-vscode-light-blue font-mono text-xs px-1 py-0.5 rounded-sm">
                   theme.extend.colors
                 </span>{" "}
                 object.
@@ -152,11 +152,11 @@ export default function HelpDialog() {
             <div className="text-zinc-300 bg-zinc-900 p-4 rounded-xl text-sm space-y-0.5">
               <p>
                 To add your custom color palette, paste it into the{" "}
-                <span className="bg-zinc-800 text-vscode-green font-mono text-xs px-1 py-0.5 rounded">
+                <span className="bg-zinc-800 text-vscode-green font-mono text-xs px-1 py-0.5 rounded-sm">
                   index.css
                 </span>{" "}
                 file. You can add your palette as CSS variables within the{" "}
-                <span className="bg-zinc-800 text-vscode-light-blue font-mono text-xs px-1 py-0.5 rounded">
+                <span className="bg-zinc-800 text-vscode-light-blue font-mono text-xs px-1 py-0.5 rounded-sm">
                   :root
                 </span>{" "}
                 selector.
@@ -226,7 +226,7 @@ export default function HelpDialog() {
               <ul className="list-disc ml-4 space-y-0.5">
                 <li>
                   Use the{" "}
-                  <span className="bg-zinc-800 text-vscode-light-blue font-mono text-xs px-1 py-0.5 rounded">
+                  <span className="bg-zinc-800 text-vscode-light-blue font-mono text-xs px-1 py-0.5 rounded-sm">
                     "New Palette"
                   </span>{" "}
                   issue template when creating your request.
@@ -373,19 +373,19 @@ export default function HelpDialog() {
         onClick={() => setIsOpen(true)}
         className="text-zinc-300 border border-zinc-700 px-2.5 py-2 md:px-2 md:py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 justify-center shrink-0 md:flex-none group select-none"
       >
-        <QuestionMarkCircleIcon className="size-4 transform group-data-[hover]:scale-110 group-data-[hover]:rotate-12 transition duration-150" />
+        <QuestionMarkCircleIcon className="size-4 transform group-data-hover:scale-110 group-data-hover:rotate-12 transition duration-150" />
         <span className="hidden md:block">Need Help?</span>
       </Button>
       {isDesktop ? (
         <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
           <DialogBackdrop
             transition
-            className="fixed inset-0 bg-black/40 z-20 data-[closed]:opacity-0 ease-out duration-150"
+            className="fixed inset-0 bg-black/40 z-20 data-closed:opacity-0 ease-out duration-150"
           />
           <div className="fixed inset-0 flex w-screen items-center justify-center p-4 z-20">
             <DialogPanel
               transition
-              className="bg-zinc-900/50 backdrop-blur-xl flex flex-col rounded-2xl max-w-2xl w-full max-h-[90%] h-auto outline-none z-20 data-[closed]:opacity-0 data-[closed]:scale-50 ease-out duration-150"
+              className="bg-zinc-900/50 backdrop-blur-xl flex flex-col rounded-2xl max-w-2xl w-full max-h-[90%] h-auto outline-hidden z-20 data-closed:opacity-0 data-closed:scale-50 ease-out duration-150"
             >
               <div className="p-6 flex-1 overflow-y-auto">
                 <DialogTitle className="font-bold text-gray-200">
@@ -405,12 +405,12 @@ export default function HelpDialog() {
         <Drawer.Root open={isOpen} onClose={() => setIsOpen(false)}>
           <Drawer.Portal>
             <Drawer.Overlay className="fixed inset-0 bg-black/40 z-20" />
-            <Drawer.Content className="bg-zinc-900/50 backdrop-blur-xl flex flex-col rounded-t-2xl mt-24 h-fit max-h-[95%] fixed bottom-0 inset-x-0 mx-auto w-full md:max-w-2xl outline-none z-20">
+            <Drawer.Content className="bg-zinc-900/50 backdrop-blur-xl flex flex-col rounded-t-2xl mt-24 h-fit max-h-[95%] fixed bottom-0 inset-x-0 mx-auto w-full md:max-w-2xl outline-hidden z-20">
               <div className="p-4 flex-1 overflow-y-auto">
                 <div className="w-full">
                   <div
                     aria-hidden
-                    className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-400 mb-4"
+                    className="mx-auto w-12 h-1.5 shrink-0 rounded-full bg-zinc-400 mb-4"
                   />
                   <Drawer.Title className="font-bold text-gray-200">
                     Do you need Help?
