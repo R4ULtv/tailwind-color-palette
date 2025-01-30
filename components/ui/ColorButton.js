@@ -55,58 +55,21 @@ const CopyButton = ({ item, color, copyValue, backgroundColor }) => {
               <code>{`${color}-${item.scale}`}</code>
             </div>
           )}
-          {item.className && (
-            <div
-              className={
-                `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
-                (copyValue === item.className
-                  ? "bg-zinc-800 text-zinc-100"
-                  : "text-zinc-400")
-              }
-            >
-              <code>{item.className}</code>
-            </div>
+          {["className", "hex", "rgb", "hsl", "oklch"].map(
+            (fmt) =>
+              item[fmt] && (
+                <div
+                  key={fmt}
+                  className={`text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ${
+                    copyValue === item[fmt]
+                      ? "bg-zinc-800 text-zinc-100"
+                      : "text-zinc-400"
+                  }`}
+                >
+                  <code>{item[fmt]}</code>
+                </div>
+              ),
           )}
-          <div
-            className={
-              `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
-              (copyValue === item.hex
-                ? "bg-zinc-800 text-zinc-100"
-                : "text-zinc-400")
-            }
-          >
-            <code>{item.hex}</code>
-          </div>
-          <div
-            className={
-              `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
-              (copyValue === item.rgb
-                ? "bg-zinc-800 text-zinc-100"
-                : "text-zinc-400")
-            }
-          >
-            <code>{item.rgb}</code>
-          </div>
-          <div
-            className={
-              `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
-              (copyValue === item.hsl
-                ? "bg-zinc-800 text-zinc-100"
-                : "text-zinc-400")
-            }
-          >
-            <code>{item.hsl}</code>
-          </div>
-          <div
-            className={
-              `text-sm truncate w-full px-1.5 py-0.5 font-medium rounded-lg ` +
-              (copyValue === item.oklch
-                ? "bg-zinc-800 text-zinc-100"
-                : "text-zinc-400")
-            }
-          >
-            <code>{item.oklch}</code>
-          </div>
         </div>
       </TooltipContent>
     </Tooltip>
